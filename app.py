@@ -3,6 +3,7 @@ import logging
 import zipfile
 import io
 from flask import Flask, render_template, jsonify, request, send_file
+from flask_cors import CORS
 from data_processor import DataProcessor
 
 # Configure logging
@@ -10,6 +11,7 @@ logging.basicConfig(level=logging.DEBUG)
 
 # Create Flask app
 app = Flask(__name__)
+CORS(app)
 app.secret_key = os.environ.get("SESSION_SECRET", "dev-secret-key-change-in-production")
 
 # Initialize data processor
