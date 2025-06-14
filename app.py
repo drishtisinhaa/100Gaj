@@ -17,19 +17,19 @@ app.secret_key = os.environ.get("SESSION_SECRET", "dev-secret-key-change-in-prod
 # Initialize data processor
 data_processor = DataProcessor()
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def index():
     """Main page with search interface"""
     return render_template('index.html')
 
-@app.route('/api/search')
+@app.route('/api/search', methods=['GET'])
 def search_locations():
     """API endpoint for location search with autocomplete"""
     query = request.args.get('q', '').strip()
     
     if not query:
         return jsonify([])
-    
+
     try:
         results = data_processor.search_locations(query)
         return jsonify(results)
@@ -37,21 +37,21 @@ def search_locations():
         app.logger.error(f"Search error: {str(e)}")
         return jsonify({'error': 'Search failed'}), 500
 
-@app.route('/api/location/<location_name>')
+@app.route('/api/location/<location_name>', methods=['GET'])
 def get_location_details(location_name):
     """API endpoint to get detailed information about a specific location"""
     try:
         location_data = data_processor.get_location_details(location_name)
-        
+
         if not location_data:
             return jsonify({'error': 'Location not found'}), 404
-        
+
         return jsonify(location_data)
     except Exception as e:
         app.logger.error(f"Location details error: {str(e)}")
         return jsonify({'error': 'Failed to retrieve location data'}), 500
 
-@app.route('/api/locations')
+@app.route('/api/locations', methods=['GET'])
 def get_all_locations():
     """API endpoint to get all locations for autocomplete"""
     try:
@@ -61,13 +61,13 @@ def get_all_locations():
         app.logger.error(f"Get all locations error: {str(e)}")
         return jsonify({'error': 'Failed to retrieve locations'}), 500
 
-@app.route('/download')
+@app.route('/download', methods=['GET'])
 def download_project():
     """Download complete project files as ZIP"""
     try:
         # Create a ZIP file in memory
         zip_buffer = io.BytesIO()
-        
+
         with zipfile.ZipFile(zip_buffer, 'w', zipfile.ZIP_DEFLATED) as zip_file:
             # Add application files
             files_to_include = [
@@ -80,20 +80,20 @@ def download_project():
                 'static/css/custom.css',
                 'data/delhi_locations.csv'
             ]
-            
+
             for file_path in files_to_include:
                 if os.path.exists(file_path):
                     zip_file.write(file_path, file_path)
-        
+
         zip_buffer.seek(0)
-        
+
         return send_file(
             zip_buffer,
             as_attachment=True,
             download_name='delhi_area_analyzer.zip',
             mimetype='application/zip'
         )
-        
+
     except Exception as e:
         app.logger.error(f"Download error: {str(e)}")
         return jsonify({'error': 'Download failed'}), 500
