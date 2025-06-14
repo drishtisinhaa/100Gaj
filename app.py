@@ -2,7 +2,7 @@ import os
 import logging
 import zipfile
 import io
-from flask import Flask, render_template, jsonify, request, send_file
+from flask import Flask, jsonify, request, send_file
 from flask_cors import CORS
 from data_processor import DataProcessor
 
@@ -18,13 +18,11 @@ app.secret_key = os.environ.get("SESSION_SECRET", "dev-secret-key-change-in-prod
 data_processor = DataProcessor()
 
 @app.route('/', methods=['GET'])
-def index():
-    """Main page with search interface"""
-    return render_template('index.html')
+def health_check():
+    return jsonify({"status": "API is running"}), 200
 
 @app.route('/api/search', methods=['GET'])
 def search_locations():
-    """API endpoint for location search with autocomplete"""
     query = request.args.get('q', '').strip()
     
     if not query:
@@ -39,13 +37,10 @@ def search_locations():
 
 @app.route('/api/location/<location_name>', methods=['GET'])
 def get_location_details(location_name):
-    """API endpoint to get detailed information about a specific location"""
     try:
         location_data = data_processor.get_location_details(location_name)
-
         if not location_data:
             return jsonify({'error': 'Location not found'}), 404
-
         return jsonify(location_data)
     except Exception as e:
         app.logger.error(f"Location details error: {str(e)}")
@@ -53,7 +48,6 @@ def get_location_details(location_name):
 
 @app.route('/api/locations', methods=['GET'])
 def get_all_locations():
-    """API endpoint to get all locations for autocomplete"""
     try:
         locations = data_processor.get_all_locations()
         return jsonify(locations)
@@ -63,37 +57,25 @@ def get_all_locations():
 
 @app.route('/download', methods=['GET'])
 def download_project():
-    """Download complete project files as ZIP"""
     try:
-        # Create a ZIP file in memory
         zip_buffer = io.BytesIO()
-
         with zipfile.ZipFile(zip_buffer, 'w', zipfile.ZIP_DEFLATED) as zip_file:
-            # Add application files
             files_to_include = [
                 'app.py',
                 'main.py',
                 'data_processor.py',
-                'templates/index.html',
-                'templates/base.html',
-                'static/js/main.js',
-                'static/css/custom.css',
                 'data/delhi_locations.csv'
             ]
-
             for file_path in files_to_include:
                 if os.path.exists(file_path):
                     zip_file.write(file_path, file_path)
-
         zip_buffer.seek(0)
-
         return send_file(
             zip_buffer,
             as_attachment=True,
-            download_name='delhi_area_analyzer.zip',
+            download_name='delhi_area_analyzer_backend.zip',
             mimetype='application/zip'
         )
-
     except Exception as e:
         app.logger.error(f"Download error: {str(e)}")
         return jsonify({'error': 'Download failed'}), 500
@@ -107,4 +89,4 @@ def internal_error(error):
     return jsonify({'error': 'Internal server error'}), 500
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=5000)
