@@ -13,7 +13,7 @@ class DataProcessor:
     def load_data(self):
         """Load and process the CSV data"""
         try:
-            csv_path = 'data/delhi_locations.csv'
+            csv_path = 'delhi_locations.csv'
             if not os.path.exists(csv_path):
                 csv_path = 'attached_assets/Delhi_Comprehensive_Livability_167_Locations_1749628652925.csv'
             
