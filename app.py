@@ -2,6 +2,9 @@ import os
 import logging
 import zipfile
 import io
+import numpy as np
+import pandas as pd
+import pickle
 from flask import Flask, jsonify, request, send_file
 from flask_cors import CORS
 from data_processor import DataProcessor
@@ -14,9 +17,21 @@ app = Flask(__name__)
 CORS(app)
 app.secret_key = os.environ.get("SESSION_SECRET", "dev-secret-key-change-in-production")
 
+# Load resale prediction model
+model = pickle.load(open("model1.pkl", "rb"))
+
 # Initialize data processor
 data_processor = DataProcessor()
 
+# Market demand adjustment
+demand_multipliers = {
+    'delhi': 1.08,
+    'gurgaon': 1.12,
+    'noida': 1.05,
+    'ghaziabad': 1.03
+}
+
+# ------------------------- Location APIs -------------------------
 @app.route('/', methods=['GET'])
 def health_check():
     return jsonify({"status": "API is running"}), 200
@@ -24,10 +39,8 @@ def health_check():
 @app.route('/api/search', methods=['GET'])
 def search_locations():
     query = request.args.get('q', '').strip()
-    
     if not query:
         return jsonify([])
-
     try:
         results = data_processor.search_locations(query)
         return jsonify(results)
@@ -80,6 +93,67 @@ def download_project():
         app.logger.error(f"Download error: {str(e)}")
         return jsonify({'error': 'Download failed'}), 500
 
+# ------------------------- ROI & Resale Prediction APIs -------------------------
+@app.route('/api/predict-resale', methods=['POST'])
+def predict_resale():
+    try:
+        data = request.get_json()
+        purchase_price = float(data["purchase_price"])
+        monthly_rent = float(data["monthly_rent"])
+        renovation_cost = float(data["renovation_cost"])
+        input_features = np.array([[purchase_price, monthly_rent, renovation_cost]])
+        resale_value = model.predict(input_features)[0]
+        return jsonify({"resale_value": round(resale_value, 2)})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 400
+
+@app.route('/api/predict-roi', methods=['POST'])
+def predict_roi():
+    try:
+        data = request.get_json()
+        purchase_price = float(data["purchase_price"])
+        monthly_rent = float(data["monthly_rent"])
+        renovation_cost = float(data["renovation_cost"])
+        city = data["city"].lower()
+
+        # Predict resale
+        input_features = np.array([[purchase_price, monthly_rent, renovation_cost]])
+        resale_value = model.predict(input_features)[0]
+
+        # Adjust rent
+        adjusted_rent = monthly_rent * demand_multipliers.get(city, 1.0)
+        annual_rent = adjusted_rent * 12
+
+        # Calculate ROI
+        total_investment = purchase_price + renovation_cost
+        roi = ((resale_value - purchase_price - renovation_cost + annual_rent) / total_investment) * 100
+
+        # Save user input log
+        log_df = pd.DataFrame([{
+            "Purchase Price": purchase_price,
+            "Monthly Rent": monthly_rent,
+            "Renovation Cost": renovation_cost,
+            "City": city,
+            "Resale Value": resale_value,
+            "Passive Income": annual_rent,
+            "ROI (%)": roi
+        }])
+        if not os.path.exists("user_inputs.csv"):
+            log_df.to_csv("user_inputs.csv", index=False)
+        else:
+            log_df.to_csv("user_inputs.csv", mode='a', header=False, index=False)
+
+        return jsonify({
+            "resale_value": round(resale_value, 2),
+            "adjusted_monthly_rent": round(adjusted_rent, 2),
+            "passive_income": round(annual_rent, 2),
+            "roi_percent": round(roi, 2),
+            "city": city.capitalize()
+        })
+    except Exception as e:
+        return jsonify({"error": str(e)}), 400
+
+# ------------------------- Error Handlers -------------------------
 @app.errorhandler(404)
 def not_found(error):
     return jsonify({'error': 'Resource not found'}), 404
@@ -88,5 +162,6 @@ def not_found(error):
 def internal_error(error):
     return jsonify({'error': 'Internal server error'}), 500
 
+# ------------------------- Main Entry -------------------------
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run()
