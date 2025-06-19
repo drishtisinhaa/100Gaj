@@ -1,6 +1,7 @@
 import os
 import logging
 import zipfile
+import json
 import io
 import numpy as np
 import pandas as pd
@@ -8,6 +9,7 @@ import pickle
 from flask import Flask, jsonify, request, send_file
 from flask_cors import CORS
 from data_processor import DataProcessor
+import joblib
 
 # Configure logging
 logging.basicConfig(level=logging.DEBUG)
@@ -17,8 +19,13 @@ app = Flask(__name__)
 CORS(app)
 app.secret_key = os.environ.get("SESSION_SECRET", "dev-secret-key-change-in-production")
 
-# Load resale prediction model
-model = pickle.load(open("model1.pkl", "rb"))
+with open("model1.pkl", "rb") as f:
+    full_pipeline = pickle.load(f)
+
+# Load feature names used during training
+with open("feature_names.json") as f:
+    feature_names = json.load(f)
+
 
 # Initialize data processor
 data_processor = DataProcessor()
@@ -98,11 +105,20 @@ def download_project():
 def predict_resale():
     try:
         data = request.get_json()
-        purchase_price = float(data["purchase_price"])
-        monthly_rent = float(data["monthly_rent"])
-        renovation_cost = float(data["renovation_cost"])
-        input_features = np.array([[purchase_price, monthly_rent, renovation_cost]])
-        resale_value = model.predict(input_features)[0]
+
+        # Convert input to DataFrame
+        input_df = pd.DataFrame([data])
+
+        # Ensure all required columns are present and ordered
+        for col in feature_names:
+            if col not in input_df.columns:
+                input_df[col] = np.nan  # fill missing columns with NaN
+
+        input_df = input_df[feature_names]
+
+        # Predict resale value
+        resale_value = full_pipeline.predict(input_df)[0]
+
         return jsonify({"resale_value": round(resale_value, 2)})
     except Exception as e:
         return jsonify({"error": str(e)}), 400
@@ -111,37 +127,26 @@ def predict_resale():
 def predict_roi():
     try:
         data = request.get_json()
+
+        # Convert to DataFrame
+        input_df = pd.DataFrame([data])
+
+        # Reorder and filter columns to match training
+        input_df = input_df[feature_names]
+        input_df = input_df.reindex(columns=feature_names)
+
+        # Predict resale value
+        resale_value = full_pipeline.predict(input_df)[0]
+
+        # ROI calculations (optional for your use-case)
         purchase_price = float(data["purchase_price"])
-        monthly_rent = float(data["monthly_rent"])
         renovation_cost = float(data["renovation_cost"])
-        city = data["city"].lower()
-
-        # Predict resale
-        input_features = np.array([[purchase_price, monthly_rent, renovation_cost]])
-        resale_value = model.predict(input_features)[0]
-
-        # Adjust rent
+        monthly_rent = float(data["monthly_rent"])
+        city = data.get("city", "").lower()
         adjusted_rent = monthly_rent * demand_multipliers.get(city, 1.0)
         annual_rent = adjusted_rent * 12
-
-        # Calculate ROI
         total_investment = purchase_price + renovation_cost
         roi = ((resale_value - purchase_price - renovation_cost + annual_rent) / total_investment) * 100
-
-        # Save user input log
-        log_df = pd.DataFrame([{
-            "Purchase Price": purchase_price,
-            "Monthly Rent": monthly_rent,
-            "Renovation Cost": renovation_cost,
-            "City": city,
-            "Resale Value": resale_value,
-            "Passive Income": annual_rent,
-            "ROI (%)": roi
-        }])
-        if not os.path.exists("user_inputs.csv"):
-            log_df.to_csv("user_inputs.csv", index=False)
-        else:
-            log_df.to_csv("user_inputs.csv", mode='a', header=False, index=False)
 
         return jsonify({
             "resale_value": round(resale_value, 2),
@@ -152,6 +157,7 @@ def predict_roi():
         })
     except Exception as e:
         return jsonify({"error": str(e)}), 400
+
 
 # ------------------------- Error Handlers -------------------------
 @app.errorhandler(404)
@@ -164,4 +170,4 @@ def internal_error(error):
 
 # ------------------------- Main Entry -------------------------
 if __name__ == '__main__':
-    app.run()
+     app.run(host='0.0.0.0', port=5003, debug=True)
