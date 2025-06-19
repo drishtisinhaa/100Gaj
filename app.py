@@ -19,7 +19,7 @@ app = Flask(__name__)
 CORS(app)
 app.secret_key = os.environ.get("SESSION_SECRET", "dev-secret-key-change-in-production")
 
-with open("model1.pkl", "rb") as f:
+with open("N1model.pkl", "rb") as f:
     full_pipeline = pickle.load(f)
 
 # Load feature names used during training
