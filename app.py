@@ -8,8 +8,9 @@ import pandas as pd
 import pickle
 from flask import Flask, jsonify, request, send_file
 from flask_cors import CORS
-import data_processor 
+from data_processor import DataProcessor
 import joblib
+
 
 # Configure logging
 logging.basicConfig(level=logging.DEBUG)
@@ -26,6 +27,7 @@ with open("N1model.pkl", "rb") as f:
 with open("feature_names.json") as f:
     feature_names = json.load(f)
 
+data_processor = DataProcessor()
 
 @app.route('/', methods=['GET'])
 def health_check():
