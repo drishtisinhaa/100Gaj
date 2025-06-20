@@ -72,7 +72,7 @@ def download_project():
                 'app.py',
                 'main.py',
                 'data_processor.py',
-                'data/delhi_locations.csv'
+                'delhi_locations.csv'
             ]
             for file_path in files_to_include:
                 if os.path.exists(file_path):
