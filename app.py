@@ -8,11 +8,11 @@ import pandas as pd
 import pickle
 from flask import Flask, jsonify, request, send_file
 from flask_cors import CORS
-import data_processor
+import data_processor 
 import joblib
 
 # Configure logging
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.DEBUG)
 
 # Create Flask app
 app = Flask(__name__)
@@ -27,12 +27,10 @@ with open("feature_names.json") as f:
     feature_names = json.load(f)
 
 
-# Simple health check
 @app.route('/', methods=['GET'])
 def health_check():
     return jsonify({"status": "API is running"}), 200
 
-# Search locations matching query
 @app.route('/api/search', methods=['GET'])
 def search_locations():
     query = request.args.get('q', '').strip()
@@ -45,7 +43,6 @@ def search_locations():
         app.logger.error(f"Search error: {str(e)}")
         return jsonify({'error': 'Search failed'}), 500
 
-# Get details about a specific location
 @app.route('/api/location/<location_name>', methods=['GET'])
 def get_location_details(location_name):
     try:
@@ -57,7 +54,6 @@ def get_location_details(location_name):
         app.logger.error(f"Location details error: {str(e)}")
         return jsonify({'error': 'Failed to retrieve location data'}), 500
 
-# Get all available location names
 @app.route('/api/locations', methods=['GET'])
 def get_all_locations():
     try:
@@ -67,7 +63,6 @@ def get_all_locations():
         app.logger.error(f"Get all locations error: {str(e)}")
         return jsonify({'error': 'Failed to retrieve locations'}), 500
 
-# Download project files as zip
 @app.route('/download', methods=['GET'])
 def download_project():
     try:
@@ -92,6 +87,11 @@ def download_project():
     except Exception as e:
         app.logger.error(f"Download error: {str(e)}")
         return jsonify({'error': 'Download failed'}), 500
+
+
+
+
+
 
 
 # ------------------------- ROI & Resale Prediction APIs -------------------------
