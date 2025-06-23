@@ -153,6 +153,11 @@ def predict_roi():
     except Exception as e:
         return jsonify({"error": str(e)}), 400
 
+@app.route('/api/user-inputs', methods=['GET'])
+def get_user_inputs():
+    print("Fetching user inputs")
+    return jsonify({"message": "This endpoint is not implemented yet."}), 501
+
 # ------------------------- Error Handlers -------------------------
 @app.errorhandler(404)
 def not_found(error):
