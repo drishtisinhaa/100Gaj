@@ -11,7 +11,6 @@ from flask_cors import CORS
 from data_processor import DataProcessor
 import joblib
 
-
 # Configure logging
 logging.basicConfig(level=logging.DEBUG)
 
@@ -29,6 +28,7 @@ with open("feature_names.json") as f:
 
 data_processor = DataProcessor()
 
+# ------------------------- Location APIs (unchanged) -------------------------
 @app.route('/', methods=['GET'])
 def health_check():
     return jsonify({"status": "API is running"}), 200
@@ -90,70 +90,69 @@ def download_project():
         app.logger.error(f"Download error: {str(e)}")
         return jsonify({'error': 'Download failed'}), 500
 
+# ------------------------- Resale + ROI Route Without Enrichment -------------------------
 
+# Load new models
+resale_model = joblib.load("MODEL1.pkl")
+resale_preprocessor = joblib.load("resale_preprocessor.pkl")
+rent_model = joblib.load("rent_model.pkl")
+rent_preprocessor = joblib.load("rent_preprocessor.pkl")
 
+# Define demand multipliers
+DEMAND_MULTIPLIERS = {
+    "delhi": 1.08,
+    "gurgaon": 1.12,
+    "noida": 1.05,
+    "ghaziabad": 1.03
+}
 
+def calculate_roi(purchase_price, resale_price, rent_per_month, years):
+    total_rent = rent_per_month * 12 * years
+    total_gain = (resale_price - purchase_price) + total_rent
+    roi = (total_gain / purchase_price) * 100
+    return round(roi, 2), round(total_rent, 2), round(total_gain, 2)
 
-
-
-# ------------------------- ROI & Resale Prediction APIs -------------------------
-@app.route('/api/predict-resale', methods=['POST'])
-def predict_resale():
-    try:
-        data = request.get_json()
-
-        # Convert input to DataFrame
-        input_df = pd.DataFrame([data])
-
-        # Ensure all required columns are present and ordered
-        for col in feature_names:
-            if col not in input_df.columns:
-                input_df[col] = np.nan  # fill missing columns with NaN
-
-        input_df = input_df[feature_names]
-
-        # Predict resale value
-        resale_value = full_pipeline.predict(input_df)[0]
-
-        return jsonify({"resale_value": round(resale_value, 2)})
-    except Exception as e:
-        return jsonify({"error": str(e)}), 400
-
-@app.route('/api/predict-roi', methods=['POST'])
+@app.route("/api/predict-roi", methods=["POST"])
 def predict_roi():
     try:
-        data = request.get_json()
+        user_input = request.get_json()
+        input_df = pd.DataFrame([user_input])
 
-        # Convert to DataFrame
-        input_df = pd.DataFrame([data])
+        # Ensure all required columns are present and ordered
+        for col in resale_preprocessor.feature_names_in_:
+            if col not in input_df.columns:
+                return jsonify({"error": f"columns are missing: {{'{col}'}}"}), 400
 
-        # Reorder and filter columns to match training
-        input_df = input_df[feature_names]
-        input_df = input_df.reindex(columns=feature_names)
+        # Resale prediction
+        X_resale = resale_preprocessor.transform(input_df)
+        resale_price = np.expm1(resale_model.predict(X_resale)[0])
 
-        # Predict resale value
-        resale_value = full_pipeline.predict(input_df)[0]
+        # Rent prediction
+        X_rent = rent_preprocessor.transform(input_df)
+        rent_price = rent_model.predict(X_rent)[0]
 
-        # ROI calculations (optional for your use-case)
-        purchase_price = float(data["purchase_price"])
-        renovation_cost = float(data["renovation_cost"])
-        monthly_rent = float(data["monthly_rent"])
-        city = data.get("city", "").lower()
-        adjusted_rent = monthly_rent * demand_multipliers.get(city, 1.0)
-        annual_rent = adjusted_rent * 12
-        total_investment = purchase_price + renovation_cost
-        roi = ((resale_value - purchase_price - renovation_cost + annual_rent) / total_investment) * 100
+        # Purchase price estimate
+        purchase_price = float(user_input["purchase_price"])
+        renovation_cost = float(user_input.get("renovation_cost", 0))
+        city = user_input.get("city", "").lower()
+
+        adjusted_rent = rent_price * DEMAND_MULTIPLIERS.get(city, 1.0)
+
+        # ROI calculation
+        years = int(user_input.get("years_held", 5))
+        roi, total_rent, total_gain = calculate_roi(purchase_price + renovation_cost, resale_price, adjusted_rent, years)
 
         return jsonify({
-            "resale_value": round(resale_value, 2),
-            "adjusted_monthly_rent": round(adjusted_rent, 2),
-            "passive_income": round(annual_rent, 2),
-            "roi_percent": round(roi, 2),
-            "city": city.capitalize()
+            "predicted_resale_price": round(resale_price),
+            "predicted_monthly_rent": round(rent_price),
+            "adjusted_monthly_rent": round(adjusted_rent),
+            "estimated_purchase_price": round(purchase_price),
+            "roi_percent": roi,
+            "total_rent_income": total_rent,
+            "total_gain": total_gain
         })
     except Exception as e:
         return jsonify({"error": str(e)}), 400
-
 
 # ------------------------- Error Handlers -------------------------
 @app.errorhandler(404)
@@ -166,4 +165,4 @@ def internal_error(error):
 
 # ------------------------- Main Entry -------------------------
 if __name__ == '__main__':
-     app.run(host='0.0.0.0', port=5003, debug=True)
+     app.run(debug=True)
