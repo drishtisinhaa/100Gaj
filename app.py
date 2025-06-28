@@ -123,35 +123,37 @@ def calculate_roi(purchase_price, resale_price, rent_per_month, years):
 def predict_roi():
     try:
         user_input = request.get_json()
-        raw_df = pd.DataFrame([user_input])
+        original_df = pd.DataFrame([user_input])
 
-        # 🛠 Step 1: Rename & Map Input
+        # Clean & Map fields to match model input
         column_mapping = {
-            "cityName": "city",
             "city": "city",
+            "cityName": "city",
             "location": "sublocation",
             "localityName": "sublocation",
             "suburbName": "sublocation",
             "name": "name",
             "rate_per_sqft": "rate_per_sqft",
-            "bedrooms": "bedroom",
             "bhk": "bedroom",
+            "bedrooms": "bedroom",
             "status": "status",
             "transaction": "transaction",
             "carpet_area_sqft": "carpet_area_sqft",
             "total_area": "total_area"
         }
 
-        renamed_df = raw_df.rename(columns={k: v for k, v in column_mapping.items() if k in raw_df.columns})
+        # Rename columns
+        cleaned_df = original_df.rename(columns=column_mapping)
 
+        # Keep only expected columns
         expected_features = [
             "city", "sublocation", "name", "rate_per_sqft", "bedroom",
             "status", "transaction", "carpet_area_sqft", "total_area"
         ]
+        cleaned_df = cleaned_df[expected_features]
 
-        filtered_df = renamed_df.reindex(columns=expected_features)
-
-        filtered_df = filtered_df.fillna({
+        # Fill missing values
+        cleaned_df = cleaned_df.fillna({
             "rate_per_sqft": 0,
             "bedroom": 2,
             "carpet_area_sqft": 0,
@@ -163,20 +165,20 @@ def predict_roi():
             "transaction": "resale"
         })
 
-        # ✅ This is now clean and correct
-        X_resale = resale_preprocessor.transform(filtered_df)
+        # ✅ This is the ONLY DataFrame we pass to the preprocessor!
+        X_resale = resale_preprocessor.transform(cleaned_df)
         resale_price = np.expm1(resale_model.predict(X_resale)[0])
 
-        X_rent = rent_preprocessor.transform(filtered_df)
+        X_rent = rent_preprocessor.transform(cleaned_df)
         rent_price = rent_model.predict(X_rent)[0]
 
-        purchase_price = float(user_input["purchase_price"])
+        purchase_price = float(user_input.get("purchase_price", 0))
         renovation_cost = float(user_input.get("renovation_cost", 0))
         city = user_input.get("city", "").lower()
 
         adjusted_rent = rent_price * DEMAND_MULTIPLIERS.get(city, 1.0)
-
         years = int(user_input.get("years_held", 5))
+
         total_rent = adjusted_rent * 12 * years
         total_gain = (resale_price - purchase_price - renovation_cost) + total_rent
         roi = (total_gain / (purchase_price + renovation_cost)) * 100
@@ -193,6 +195,7 @@ def predict_roi():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 400
+
 
 
 
