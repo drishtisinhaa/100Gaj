@@ -123,78 +123,72 @@ def calculate_roi(purchase_price, resale_price, rent_per_month, years):
 def predict_roi():
     try:
         user_input = request.get_json()
-        input_df = pd.DataFrame([user_input])
+        raw_input_df = pd.DataFrame([user_input])
 
-        user_input = request.get_json()
-raw_input_df = pd.DataFrame([user_input])
+        # --- Rename and extract only model-relevant fields ---
+        column_mapping = {
+            "cityName": "city",
+            "city": "city",
+            "location": "sublocation",
+            "localityName": "sublocation",
+            "suburbName": "sublocation",
+            "name": "name",
+            "rate_per_sqft": "rate_per_sqft",
+            "bedrooms": "bedroom",
+            "bhk": "bedroom",
+            "status": "status",
+            "transaction": "transaction",
+            "carpet_area_sqft": "carpet_area_sqft",
+            "total_area": "total_area"
+        }
 
-# --- Rename and extract only model-relevant fields ---
-column_mapping = {
-    "cityName": "city",
-    "city": "city",
-    "location": "sublocation",
-    "localityName": "sublocation",
-    "suburbName": "sublocation",
-    "name": "name",
-    "rate_per_sqft": "rate_per_sqft",
-    "bedrooms": "bedroom",
-    "bhk": "bedroom",
-    "status": "status",
-    "transaction": "transaction",
-    "carpet_area_sqft": "carpet_area_sqft",
-    "total_area": "total_area"
-}
+        input_df = raw_input_df.rename(columns={k: v for k, v in column_mapping.items() if k in raw_input_df.columns})
 
-# Rename columns
-input_df = raw_input_df.rename(columns={k: v for k, v in column_mapping.items() if k in raw_input_df.columns})
+        expected_features = ["city", "sublocation", "name", "rate_per_sqft", "bedroom", "status", "transaction", "carpet_area_sqft", "total_area"]
+        input_df = input_df.reindex(columns=expected_features)
 
-# Reindex to expected features
-expected_features = ["city", "sublocation", "name", "rate_per_sqft", "bedroom", "status", "transaction", "carpet_area_sqft", "total_area"]
-input_df = input_df.reindex(columns=expected_features)
+        input_df = input_df.fillna({
+            "rate_per_sqft": 0,
+            "bedroom": 2,
+            "carpet_area_sqft": 0,
+            "total_area": 0,
+            "city": "Unknown",
+            "sublocation": "Unknown",
+            "name": "Unknown",
+            "status": "ready_to_move",
+            "transaction": "resale"
+        })
 
-# Fill missing values
-input_df = input_df.fillna({
-    "rate_per_sqft": 0,
-    "bedroom": 2,
-    "carpet_area_sqft": 0,
-    "total_area": 0,
-    "city": "Unknown",
-    "sublocation": "Unknown",
-    "name": "Unknown",
-    "status": "ready_to_move",
-    "transaction": "resale"
-})
+        X_resale = resale_preprocessor.transform(input_df)
+        resale_price = np.expm1(resale_model.predict(X_resale)[0])
 
-# ✅ Now transform using resale preprocessor and model
-X_resale = resale_preprocessor.transform(input_df)
-resale_price = np.expm1(resale_model.predict(X_resale)[0])
+        X_rent = rent_preprocessor.transform(input_df)
+        rent_price = rent_model.predict(X_rent)[0]
 
-# ✅ Predict rent too
-X_rent = rent_preprocessor.transform(input_df)
-rent_price = rent_model.predict(X_rent)[0]
+        purchase_price = float(user_input["purchase_price"])
+        renovation_cost = float(user_input.get("renovation_cost", 0))
+        city = user_input.get("city", "").lower()
 
-# ROI calculation
-purchase_price = float(user_input["purchase_price"])
-renovation_cost = float(user_input.get("renovation_cost", 0))
-city = user_input.get("city", "").lower()
-adjusted_rent = rent_price * DEMAND_MULTIPLIERS.get(city, 1.0)
+        adjusted_rent = rent_price * DEMAND_MULTIPLIERS.get(city, 1.0)
 
-
-        # ROI calculation
         years = int(user_input.get("years_held", 5))
-        roi, total_rent, total_gain = calculate_roi(purchase_price + renovation_cost, resale_price, adjusted_rent, years)
+        total_rent = adjusted_rent * 12 * years
+        total_gain = (resale_price - purchase_price - renovation_cost) + total_rent
+        roi = (total_gain / (purchase_price + renovation_cost)) * 100
 
         return jsonify({
             "predicted_resale_price": round(resale_price),
             "predicted_monthly_rent": round(rent_price),
             "adjusted_monthly_rent": round(adjusted_rent),
             "estimated_purchase_price": round(purchase_price),
-            "roi_percent": roi,
-            "total_rent_income": total_rent,
-            "total_gain": total_gain
+            "roi_percent": round(roi, 2),
+            "total_rent_income": round(total_rent, 2),
+            "total_gain": round(total_gain, 2)
         })
+
     except Exception as e:
         return jsonify({"error": str(e)}), 400
+
 
 # ------------------------- Error Handlers -------------------------
 @app.errorhandler(404)
