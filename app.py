@@ -5,7 +5,7 @@ import json
 import io
 import numpy as np
 import pandas as pd
-import pickle
+import cloudpickle
 from flask import Flask, jsonify, request, send_file
 from flask_cors import CORS
 from data_processor import DataProcessor
@@ -91,10 +91,23 @@ def download_project():
 # ------------------------- Resale + ROI Route Without Enrichment -------------------------
 
 # Load new models
-resale_model = joblib.load("MODEL1.pkl")
-resale_preprocessor = joblib.load("resale_preprocessor.pkl")
-rent_model = joblib.load("rent_model.pkl")
-rent_preprocessor = joblib.load("rent_preprocessor.pkl")
+
+# Load rent model
+with open("RENTM.pkl", "rb") as f:
+    rent_model = cloudpickle.load(f)
+
+# Load rent preprocessor
+with open("RENTP.pkl", "rb") as f:
+    rent_preprocessor = cloudpickle.load(f)
+
+# Load resale model
+with open("RESALEM.pkl", "rb") as f:
+    resale_model = cloudpickle.load(f)
+
+# Load resale preprocessor
+with open("RESALEP.pkl", "rb") as f:
+    resale_preprocessor = cloudpickle.load(f)
+
 
 # Define demand multipliers
 DEMAND_MULTIPLIERS = {
