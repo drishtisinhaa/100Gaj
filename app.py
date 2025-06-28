@@ -123,9 +123,9 @@ def calculate_roi(purchase_price, resale_price, rent_per_month, years):
 def predict_roi():
     try:
         user_input = request.get_json()
-        raw_input_df = pd.DataFrame([user_input])
+        raw_df = pd.DataFrame([user_input])
 
-        # --- Rename and extract only model-relevant fields ---
+        # 🛠 Step 1: Rename & Map Input
         column_mapping = {
             "cityName": "city",
             "city": "city",
@@ -142,12 +142,16 @@ def predict_roi():
             "total_area": "total_area"
         }
 
-        input_df = raw_input_df.rename(columns={k: v for k, v in column_mapping.items() if k in raw_input_df.columns})
+        renamed_df = raw_df.rename(columns={k: v for k, v in column_mapping.items() if k in raw_df.columns})
 
-        expected_features = ["city", "sublocation", "name", "rate_per_sqft", "bedroom", "status", "transaction", "carpet_area_sqft", "total_area"]
-        input_df = input_df.reindex(columns=expected_features)
+        expected_features = [
+            "city", "sublocation", "name", "rate_per_sqft", "bedroom",
+            "status", "transaction", "carpet_area_sqft", "total_area"
+        ]
 
-        input_df = input_df.fillna({
+        filtered_df = renamed_df.reindex(columns=expected_features)
+
+        filtered_df = filtered_df.fillna({
             "rate_per_sqft": 0,
             "bedroom": 2,
             "carpet_area_sqft": 0,
@@ -159,10 +163,11 @@ def predict_roi():
             "transaction": "resale"
         })
 
-        X_resale = resale_preprocessor.transform(input_df)
+        # ✅ This is now clean and correct
+        X_resale = resale_preprocessor.transform(filtered_df)
         resale_price = np.expm1(resale_model.predict(X_resale)[0])
 
-        X_rent = rent_preprocessor.transform(input_df)
+        X_rent = rent_preprocessor.transform(filtered_df)
         rent_price = rent_model.predict(X_rent)[0]
 
         purchase_price = float(user_input["purchase_price"])
@@ -188,6 +193,7 @@ def predict_roi():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 400
+
 
 
 # ------------------------- Error Handlers -------------------------
