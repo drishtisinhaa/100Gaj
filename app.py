@@ -19,7 +19,6 @@ app = Flask(__name__)
 CORS(app)
 app.secret_key = os.environ.get("SESSION_SECRET", "dev-secret-key-change-in-production")
 
-
 # Load feature names used during training
 with open("feature_names.json") as f:
     feature_names = json.load(f)
@@ -90,8 +89,6 @@ def download_project():
 
 # ------------------------- Resale + ROI Route Without Enrichment -------------------------
 
-# Load new models
-
 # Load rent model
 with open("RENTM.pkl", "rb") as f:
     rent_model = cloudpickle.load(f)
@@ -107,7 +104,6 @@ with open("RESALEM.pkl", "rb") as f:
 # Load resale preprocessor
 with open("RESALEP.pkl", "rb") as f:
     resale_preprocessor = cloudpickle.load(f)
-
 
 # Define demand multipliers
 DEMAND_MULTIPLIERS = {
@@ -129,10 +125,40 @@ def predict_roi():
         user_input = request.get_json()
         input_df = pd.DataFrame([user_input])
 
-        # Ensure all required columns are present and ordered
-        for col in resale_preprocessor.feature_names_in_:
-            if col not in input_df.columns:
-                return jsonify({"error": f"columns are missing: {{'{col}'}}"}), 400
+        # --- 🛠 Fix input to match model's trained feature names ---
+        column_mapping = {
+            "cityName": "city",
+            "city": "city",
+            "location": "sublocation",
+            "localityName": "sublocation",
+            "suburbName": "sublocation",
+            "name": "name",
+            "rate_per_sqft": "rate_per_sqft",
+            "bedrooms": "bedroom",
+            "bhk": "bedroom",
+            "status": "status",
+            "transaction": "transaction",
+            "carpet_area_sqft": "carpet_area_sqft",
+            "total_area": "total_area"
+        }
+
+        input_df = input_df.rename(columns={k: v for k, v in column_mapping.items() if k in input_df.columns})
+
+        expected_features = ["city", "sublocation", "name", "rate_per_sqft", "bedroom", "status", "transaction", "carpet_area_sqft", "total_area"]
+        input_df = input_df.reindex(columns=expected_features)
+
+        # Fill missing values with defaults
+        input_df = input_df.fillna({
+            "rate_per_sqft": 0,
+            "bedroom": 2,
+            "carpet_area_sqft": 0,
+            "total_area": 0,
+            "city": "Unknown",
+            "sublocation": "Unknown",
+            "name": "Unknown",
+            "status": "ready_to_move",
+            "transaction": "resale"
+        })
 
         # Resale prediction
         X_resale = resale_preprocessor.transform(input_df)
