@@ -125,55 +125,60 @@ def predict_roi():
         user_input = request.get_json()
         input_df = pd.DataFrame([user_input])
 
-        # --- 🛠 Fix input to match model's trained feature names ---
-        column_mapping = {
-            "cityName": "city",
-            "city": "city",
-            "location": "sublocation",
-            "localityName": "sublocation",
-            "suburbName": "sublocation",
-            "name": "name",
-            "rate_per_sqft": "rate_per_sqft",
-            "bedrooms": "bedroom",
-            "bhk": "bedroom",
-            "status": "status",
-            "transaction": "transaction",
-            "carpet_area_sqft": "carpet_area_sqft",
-            "total_area": "total_area"
-        }
+        user_input = request.get_json()
+raw_input_df = pd.DataFrame([user_input])
 
-        input_df = input_df.rename(columns={k: v for k, v in column_mapping.items() if k in input_df.columns})
+# --- Rename and extract only model-relevant fields ---
+column_mapping = {
+    "cityName": "city",
+    "city": "city",
+    "location": "sublocation",
+    "localityName": "sublocation",
+    "suburbName": "sublocation",
+    "name": "name",
+    "rate_per_sqft": "rate_per_sqft",
+    "bedrooms": "bedroom",
+    "bhk": "bedroom",
+    "status": "status",
+    "transaction": "transaction",
+    "carpet_area_sqft": "carpet_area_sqft",
+    "total_area": "total_area"
+}
 
-        expected_features = ["city", "sublocation", "name", "rate_per_sqft", "bedroom", "status", "transaction", "carpet_area_sqft", "total_area"]
-        input_df = input_df.reindex(columns=expected_features)
+# Rename columns
+input_df = raw_input_df.rename(columns={k: v for k, v in column_mapping.items() if k in raw_input_df.columns})
 
-        # Fill missing values with defaults
-        input_df = input_df.fillna({
-            "rate_per_sqft": 0,
-            "bedroom": 2,
-            "carpet_area_sqft": 0,
-            "total_area": 0,
-            "city": "Unknown",
-            "sublocation": "Unknown",
-            "name": "Unknown",
-            "status": "ready_to_move",
-            "transaction": "resale"
-        })
+# Reindex to expected features
+expected_features = ["city", "sublocation", "name", "rate_per_sqft", "bedroom", "status", "transaction", "carpet_area_sqft", "total_area"]
+input_df = input_df.reindex(columns=expected_features)
 
-        # Resale prediction
-        X_resale = resale_preprocessor.transform(input_df)
-        resale_price = np.expm1(resale_model.predict(X_resale)[0])
+# Fill missing values
+input_df = input_df.fillna({
+    "rate_per_sqft": 0,
+    "bedroom": 2,
+    "carpet_area_sqft": 0,
+    "total_area": 0,
+    "city": "Unknown",
+    "sublocation": "Unknown",
+    "name": "Unknown",
+    "status": "ready_to_move",
+    "transaction": "resale"
+})
 
-        # Rent prediction
-        X_rent = rent_preprocessor.transform(input_df)
-        rent_price = rent_model.predict(X_rent)[0]
+# ✅ Now transform using resale preprocessor and model
+X_resale = resale_preprocessor.transform(input_df)
+resale_price = np.expm1(resale_model.predict(X_resale)[0])
 
-        # Purchase price estimate
-        purchase_price = float(user_input["purchase_price"])
-        renovation_cost = float(user_input.get("renovation_cost", 0))
-        city = user_input.get("city", "").lower()
+# ✅ Predict rent too
+X_rent = rent_preprocessor.transform(input_df)
+rent_price = rent_model.predict(X_rent)[0]
 
-        adjusted_rent = rent_price * DEMAND_MULTIPLIERS.get(city, 1.0)
+# ROI calculation
+purchase_price = float(user_input["purchase_price"])
+renovation_cost = float(user_input.get("renovation_cost", 0))
+city = user_input.get("city", "").lower()
+adjusted_rent = rent_price * DEMAND_MULTIPLIERS.get(city, 1.0)
+
 
         # ROI calculation
         years = int(user_input.get("years_held", 5))
