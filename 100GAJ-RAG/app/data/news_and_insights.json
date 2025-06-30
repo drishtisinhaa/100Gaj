@@ -1,0 +1,45 @@
+{
+    "market_news": [
+      {
+        "title": "TRAI's Digital Infra Rating for Buildings Sparks Cost Debate",
+        "source": "Livemint",
+        "date": "June 13, 2025",
+        "summary": "A conflict is brewing in India between telecom providers and real estate developers over who will bear the costs for a new digital connectivity rating system for buildings. This framework, developed by the Telecom Regulatory Authority, aims to improve indoor mobile and internet signal quality."
+      },
+      {
+        "title": "Viral Post on High Salaries vs. Home Affordability Sparks Debate",
+        "source": "News18",
+        "date": "June 8, 2025",
+        "summary": "A viral post on social media platform X, by a user named Akhilesh, has brought India's real estate affordability crisis into focus. The post illustrates how even individuals with high salaries in corporate hubs like Gurugram struggle to afford a home, leading to a nationwide debate."
+      },
+      {
+        "title": "Japanese Developers Increase Investment in Indian Real Estate",
+        "source": "Livemint",
+        "date": "June 8, 2025",
+        "summary": "Japanese real estate investors and developers are making significant, long-term bets on the Indian market. Unlike many others, they are acting as patient, equity-focused investors, primarily targeting land acquisition and early-stage development projects with a long growth horizon."
+      },
+      {
+        "title": "India’s Real Estate Giants Prepare for a Generational Shift",
+        "source": "Livemint",
+        "date": "May 18, 2025",
+        "summary": "Major family-led real estate businesses in India, including the Prestige Group, Brigade Enterprises, and Embassy Group, are in the process of handing over leadership to the next generation of their families."
+      }
+    ],
+    "ai_achievements": {
+      "title": "AI-Powered Enhancements at 100Gaj",
+      "statistics": [
+        {"metric": "Accuracy in Price Predictions", "value": "95%"},
+        {"metric": "Property Matching Speed", "value": "10x Faster"},
+        {"metric": "AI Assistant Availability", "value": "24/7"},
+        {"metric": "Data Points Analyzed Per Neighborhood", "value": "1000+"}
+      ],
+      "benefits_summary": "Our AI tools enhance your property journey by saving you time and effort, helping you make informed, data-driven decisions, providing a personalized experience with tailored recommendations, and improving property visualization with remote virtual tours."
+    },
+    "business_performance": {
+        "title": "Platform Activity",
+        "metrics": [
+            {"statistic": "A property is sold on our platform every 30 minutes."},
+            {"statistic": "We have over 10,000 active buyers searching on our site daily."}
+        ]
+    }
+  }

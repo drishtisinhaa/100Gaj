@@ -1,0 +1,37 @@
+{
+    "faqs": [
+      {
+        "question": "How do I start buying a property?",
+        "answer": "The best way to start is by browsing our curated listings on the 100gaj website. You can use our search and AI-powered tools to find properties that match your needs. When you're ready, you can schedule a viewing or contact our team for personalized assistance, and we'll guide you through the rest of the process."
+      },
+      {
+        "question": "What kind of properties do you have?",
+        "answer": "We specialize in luxury and premium properties. This includes modern apartments in well-connected areas, luxury villas with high-end amenities, exclusive bungalows, and commercial real estate in prime business districts. All our listings are verified for quality and accuracy."
+      },
+      {
+        "question": "How can I schedule a property visit?",
+        "answer": "You can schedule a viewing directly from a property's page on our website. Alternatively, you can fill out our contact form or call our office, and our team will coordinate with you to arrange a convenient time to visit the property, either in person or through a virtual tour."
+      },
+      {
+        "question": "What services do you offer for property sellers?",
+        "answer": "We provide a comprehensive, free platform for sellers. Key benefits include zero commission on your sale, access to a large network of verified buyers, and expert support from our team. The process is simple: create a profile, list your property, get it verified by our team, and then connect directly with interested buyers."
+      },
+      {
+        "question": "How is the Delhi Area Analyzer tool useful?",
+        "answer": "The Delhi Area Analyzer is a powerful AI tool designed to help you make better decisions. It provides a detailed report on any area in Delhi, including a safety score based on crime statistics, an assessment of infrastructure like roads and water supply, and pros and cons based on feedback from current residents. It's perfect for understanding a neighborhood before you invest or move."
+      },
+      {
+        "question": "What is EMI and how can I calculate it?",
+        "answer": "EMI stands for Equated Monthly Instalment, which is a fixed payment you make to a lender each month for your loan. Our Loan EMI Calculator helps you estimate this amount. You just need to input the loan amount, interest rate, and loan tenure. The tool then shows your monthly payment, total interest, and a breakdown of the loan. While it's a great planning tool, we always recommend consulting a financial advisor for final decisions."
+      },
+      {
+        "question": "What factors affect home loan eligibility?",
+        "answer": "Several factors influence your home loan eligibility. Lenders typically look at your age, your income and its stability, your credit score, any existing financial commitments like other loans, and the value and location of the property you intend to buy. A strong financial profile generally leads to better loan terms."
+      }
+    ],
+    "client_testimonials": [
+      {"author": "Rahul Sharma, Homeowner", "feedback": "The 100gaj team made the process of finding our dream home effortless. Their attention to detail and personalized service were exceptional."},
+      {"author": "Priya Patel, First-time Buyer", "feedback": "As a first-time buyer, I was nervous, but 100gaj guided me through every step. I couldn't be happier with my new home."},
+      {"author": "Vikram Malhotra, Property Seller", "feedback": "Selling my property was quick and hassle-free thanks to 100gaj. Their professionalism and market knowledge are unmatched."}
+    ]
+  }
