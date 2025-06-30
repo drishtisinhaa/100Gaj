@@ -1,0 +1,322 @@
+Section 1: General Company & Service Information
+Who are you?
+100गज is an innovative AI-powered PropTech platform.
+What is 100Gaj?
+100गज is a technology-driven real estate platform that simplifies property transactions for dealers and users.
+What does your company do?
+We provide a one-stop solution for renting, buying, and selling residential, commercial, and plot properties.
+What is the main goal of 100Gaj?
+To simplify and revolutionize property transactions in India using smart technology.
+What is your company's mission?
+To make property transactions seamless, transparent, and accessible for everyone.
+What is the vision of 100Gaj?
+To become the leading PropTech platform in India by leveraging AI and innovation.
+What kind of real estate do you specialize in?
+Residential, commercial, and plot properties.
+Do you only deal in luxury properties?
+No, we cater to all segments, from affordable to luxury.
+What is your company's slogan?
+Plot ho ya flat, 100गज par karo baat! (Whether it’s a plot or a flat, talk to 100गज!)
+Where is 100Gaj located?
+(To be filled as per company details; not specified in current data.)
+What is your office address?
+(To be filled as per company details; not specified in current data.)
+How can I contact 100Gaj?
+Through our website, support email, or phone number.
+What is your support email address?
+(To be filled as per company details.)
+What is your phone number?
+(To be filled as per company details.)
+How many years of experience does your company have?
+(To be filled as per company details.)
+How many properties has 100Gaj sold?
+(To be filled as per company details.)
+What is your client satisfaction rate?
+(To be filled as per company details.)
+Has your company won any awards?
+(To be filled as per company details.)
+What is the total value of property transactions you've handled?
+(To be filled as per company details.)
+Who is the CEO of 100Gaj?
+(To be filled as per company details.)
+Tell me about Aryan Panda.
+(To be filled as per company details.)
+Who is the COO?
+(To be filled as per company details.)
+What is Bhoomi Singh's role?
+(To be filled as per company details.)
+Who is the HR Manager?
+(To be filled as per company details.)
+Tell me about Shrishti Parihar.
+(To be filled as per company details.)
+What are your company's core values?
+Innovation, transparency, customer-centricity, and trust.
+How does 100Gaj ensure a good customer experience?
+Through a user-friendly interface, AI-driven recommendations, and responsive support.
+What makes 100Gaj a trusted partner?
+Verified listings, smart technology, and a commitment to customer satisfaction.
+What is your commitment to clients?
+To provide seamless, transparent, and personalized property transactions.
+Are you hiring? / How can I join your team?
+Visit our careers page or contact HR for open positions.
+Section 2: Property Search & Listings
+A. Buying Properties
+31. I want to buy a property.
+You can browse, shortlist, and purchase properties on our platform.
+32. Can you help me find a home to purchase?
+Yes, our AI-driven tools help you find the perfect home.
+33. Show me properties for sale.
+Explore our listings on the website or app.
+34. I'm looking for properties to buy in [Location].
+Enter your desired location to view available properties.
+35. What flats are available for sale in [Location]?
+Filter by property type and location to see available flats.
+36. Are there any villas for sale in [Location]?
+Yes, filter by villa and location to see listings.
+37. I need to buy an apartment in [Location].
+You can search for apartments by location on our platform.
+38. Show me commercial properties for sale in [Location].
+Filter by commercial property type and location.
+39. What is the price of a 3BHK flat in [Location]?
+Prices vary—use our filters to see current listings.
+40. How much does a villa in South Delhi cost?
+Prices depend on location and amenities—browse listings for current rates.
+41. Can I search for properties near my current location?
+Yes, use the location-based search feature.
+42. How do I search for properties on your website?
+Use filters for property type, location, price, and amenities.
+43. What types of properties can I buy through your platform?
+Residential, commercial, and plots.
+44. Are the property listings verified?
+Yes, all listings undergo a verification process.
+45. How do you verify your listings?
+Through document checks and AI-powered validation.
+46. Can I see a map view of the properties?
+Yes, map view is available for easy navigation.
+47. How often are new properties added?
+New properties are added regularly—check back often.
+48. I'm looking for a resale property, do you have those?
+Yes, resale properties are available.
+49. Do you have listings with a swimming pool?
+Yes, filter by amenities to find such properties.
+50. I need a property with car parking.
+Filter by car parking to see relevant listings.
+51. Are there properties near good schools?
+Yes, use the neighborhood analysis tool to find such properties.
+52. Do your apartment listings have lift access?
+Filter by lift access to see available options.
+53. What is the process to buy a property through 100Gaj?
+Search, shortlist, connect with the seller, negotiate, and complete documentation.
+54. Can you explain the four steps to buying a home with you?
+1.Search and shortlist, 2. Connect with seller/agent, 3. Visit and negotiate, 4. Complete documentation and payment.
+B. Renting Properties
+55. I want to rent a property.
+Browse rental listings on our platform.
+56. Can you help me find a place to rent?
+Yes, our AI tools help you find suitable rentals.
+57. Show me properties for rent.
+Explore rental listings on our website or app.
+58. I'm looking for properties to rent in [Location].
+Filter by location to see available rentals.
+59. What flats are available for rent in [Location]?
+Filter by flat and location to see options.
+60. Are there any villas for rent in [Location]?
+Yes, filter by villa and location.
+61. I need to rent an apartment in [Location].
+Search for apartments by location.
+62. Show me commercial properties for rent in [Location].
+Filter by commercial property type and location.
+63. What is the monthly rent for a 2BHK apartment in [Location]?
+Rents vary—use filters to see current rates.
+64. How much is the rent for a flat in Dwarka?
+Check our Dwarka listings for current rent prices.
+65. What is the process to rent a property through 100Gaj?
+Search, shortlist, connect with landlord, negotiate, sign agreement, and pay deposit.
+Section 3: Localities, Builders, and Agents
+A. Localities
+66. What are the trending localities right now?
+Trending localities include Dwarka, Golf Course Road, South Delhi, Gurgaon, Saket, and Vasant Kunj.
+67. Which areas are most sought-after for investment?
+Dwarka, Golf Course Road, South Delhi, and Gurgaon are highly sought-after.
+68. Tell me about properties in Dwarka.
+Dwarka offers a mix of residential and commercial properties with good connectivity.
+69. What is Golf Course Road known for?
+Premium residential and commercial projects.
+70. Describe the real estate in South Delhi.
+South Delhi is known for luxury properties and prime locations.
+71. What kind of properties are available in Gurgaon?
+Residential, commercial, and plotted properties, including high-rises.
+72. Tell me about properties in Saket.
+Saket offers a mix of luxury apartments and commercial spaces.
+73. What is Lutyens' Delhi like for real estate?
+Lutyens' Delhi is exclusive, with high-value bungalows and limited availability.
+74. I'm interested in Defence Colony.
+Defence Colony is a prestigious residential area in South Delhi.
+75. What's available in Vasant Kunj?
+Luxury apartments, villas, and commercial spaces.
+76. Tell me about Hauz Khas.
+Hauz Khas is known for its vibrant mix of residential, commercial, and cultural spaces.
+77. What about Greater Kailash?
+Greater Kailash is a prime residential area in South Delhi.
+78. Show me properties in Model Town.
+Model Town offers a range of residential properties.
+79. What is Pandav Nagar like?
+Pandav Nagar is an affordable residential locality.
+80. Which locality has the best connectivity to the airport?
+Vasant Kunj and Gurgaon have excellent airport connectivity.
+81. Where can I find luxury high-rise apartments?
+Gurgaon, Golf Course Road, and South Delhi.
+82. Where are the most prestigious neighborhoods?
+Lutyens' Delhi, South Delhi, and Golf Course Road.
+B. Builders
+83. Who are the premium builders you partner with?
+We partner with leading developers such as DLF, Godrej, Prestige, Sobha, and Lodha.
+84. Which developers do you work with?
+DLF, Godrej Properties, Prestige Group, Sobha Limited, Lodha Group, and others.
+85. Tell me about DLF Limited.
+DLF is one of India’s largest real estate developers, known for premium projects.
+86. How many projects does Godrej Properties have listed with you?
+(To be filled as per company data.)
+87. I want to know more about the Prestige Group.
+Prestige Group is a leading developer known for quality and innovation.
+88. What is Sobha Limited known for?
+Sobha is known for high-quality construction and customer satisfaction.
+89. Tell me about the Lodha Group.
+Lodha Group is a premium developer with landmark projects.
+90. Why should I trust the builders you list?
+All builders are vetted for reputation, quality, and compliance.
+91. What are the qualities of your partner developers?
+Reputation, quality, timely delivery, and customer satisfaction.
+92. Can I see a list of all builders?
+Yes, a complete list is available on our platform.
+C. Agents
+93. Can you help me find an agent?
+Yes, you can connect with our network of agents.
+94. Who are your top agents?
+(To be filled as per company data.)
+95. Tell me about Rahul Sharma.
+(To be filled as per company data.)
+96. What is Priya Patel's specialty?
+(To be filled as per company data.)
+97. How many properties does Vikram Singh handle?
+(To be filled as per company data.)
+98. What is Neha Khanna's rating?
+(To be filled as per company data.)
+99. I need a Luxury Property Specialist.
+We have agents specializing in luxury properties.
+100. Who can help with Commercial Real Estate?
+We have commercial real estate experts.
+101. I need an Investment Advisor.
+You can connect with our investment advisors.
+102. Can you recommend a Residential Expert?
+Yes, we can recommend residential property experts.
+103. Tell me about Daksh Gupta.
+(To be filled as per company data.)
+104. What languages do your agents speak?
+Our agents speak multiple languages, including Hindi and English.
+105. How can I contact an agent?
+Through our platform’s messaging or contact features.
+106. Can I search for an agent by their specialization?
+Yes, you can filter agents by specialization.
+Section 4: AI-Powered Tools & Technology (Expanded)
+What AI tools does 100Gaj offer?
+100Gaj offers advanced AI tools including property matchmaking, real-time AR walkthroughs, crowd and noise level insights, investment ROI simulation, predictive crime and safety index, dynamic pricing, VR-based renovation planning, and blockchain-based transactions.
+How does 100Gaj use technology?
+We leverage AI, AR/VR, IoT, blockchain, and smart contracts to provide a seamless, secure, and personalized property transaction experience.
+Tell me about the Virtual Property Tour.
+We offer live augmented reality (AR) property walkthroughs, allowing users to explore properties using their phone’s camera. Users can overlay furniture, lighting, and design modifications in real-time. You can also project a 3D model of a future house on an empty plot.
+How can I see a 3D walkthrough of a property?
+Select the AR walkthrough feature on the property listing page to start an immersive, real-time virtual tour using your smartphone.
+What is the Delhi Area Analyzer?
+It’s a tool that provides insights into neighborhoods, including safety, connectivity, and amenities.
+How does the area analyzer work?
+It uses data analytics and AI to evaluate and rate localities based on multiple factors.
+What kind of insights can I get about a neighborhood?
+You can see safety, connectivity, schools, hospitals, market trends, crowd density, and noise levels.
+Does the Delhi Area Analyzer check for safety?
+Yes, it includes predictive crime and safety scores, helping you assess future safety trends.
+Tell me about your Price Prediction tool.
+It predicts future property prices based on market trends and AI analysis.
+How accurate are your property price predictions?
+Our predictions are highly accurate, leveraging advanced analytics and large datasets.
+What is Smart Home Integration?
+Allows users to connect with smart home features for listed properties.
+What does your Chatbot Assistant do?
+It provides instant support and answers user queries.
+Tell me about the Neighborhood Analysis tool.
+It gives detailed insights into locality features and trends.
+How does AI analyze a neighborhood's potential?
+By analyzing data on infrastructure, amenities, market trends, crowd, and noise.
+What is the Document Analysis tool?
+It helps users verify property documents using AI.
+Can your AI help with legal documents?
+Yes, it can assist in reviewing and verifying documents.
+How does AI enhance my property search journey?
+By providing personalized recommendations, automating tasks, and offering advanced visualization and analytics.
+How does AI save me time and effort?
+By streamlining search, verification, and documentation processes.
+How does AI help me make informed decisions?
+Through data-driven insights, predictive analytics, and real-time information.
+How does 100Gaj personalize my experience?
+By learning your preferences and suggesting relevant listings, neighborhoods, and investment opportunities.
+What is the benefit of AI-powered visualization?
+It enables remote property exploration, real-time modifications, and better decision-making.
+How much faster is property matching with your AI?
+AI significantly reduces search time by matching properties to your needs instantly.
+How many data points do you analyze for each area?
+We analyze thousands of data points for comprehensive insights.
+Can I get a demo of your AI features?
+Yes, you can request a demo through our website.
+New AI & Business Model Features
+How does the AI-powered property matchmaker work?
+Users answer a short questionnaire about preferences, lifestyle, work commute, and budget. The AI then suggests the best-fit properties and neighborhoods based on their responses and behavior.
+What is Live Augmented Reality (AR) Property Walkthrough?
+Users can walk through properties using their phone’s camera, overlaying furniture and modifications in real-time. They can also visualize a future home on an empty plot.
+How does 100Gaj provide real-time crowd and noise level insights?
+We use IoT sensors, traffic data, and social media activity to show real-time crowd density and noise levels for any area, helping users assess the environment.
+What is the Property Investment ROI Simulator?
+Users enter investment details (price, expected rent, renovation costs), and the AI predicts future ROI, resale value, and passive income potential.
+What is the "Try Before You Buy" rental model?
+Potential buyers can rent a home for a short trial period (like a weekend or week) to experience living there before making a purchase decision.
+How does 100Gaj use blockchain for property transactions?
+We use smart contracts to enable secure, instant, and fraud-proof buying and selling of properties. Every transaction is recorded on a blockchain ledger for transparency.
+What is the AI-powered Predictive Crime & Safety Index?
+It uses crime data and AI to predict future safety of an area, giving users a "future crime prediction" score.
+What is Hyper-Local Social Integration?
+Buyers can chat with current residents via a community forum to ask about safety, schools, commute, and social life.
+What is the VR-Based Renovation Planner?
+Users can modify a house’s interior/exterior in VR to visualize different renovation styles. AI suggests cost estimates and connects them with contractors.
+What is "Dynamic Pricing" for houses?
+Property prices change based on demand, interest, and nearby trends, similar to flight and hotel pricing. Limited-time deals are offered based on real-time buyer activity.
+New Section: Equity Ownership & Micro Real Estate
+What is the Equity Ownership Plan at 100Gaj?
+The equity ownership plan allows multiple investors to own a stake in a property through fractional or co-ownership. This makes real estate investment more accessible and is managed transparently via smart contracts.
+What is Micro Real Estate?
+Micro real estate lets users invest in small, high-demand segments like single rooms, micro-apartments, or commercial kiosks. This lowers the investment barrier and diversifies portfolios.
+If you want these answers in a fully numbered and sectioned format matching your original docx (for copy-paste or import), here is a sample for the new and expanded questions (you can insert these as needed):
+AI-Powered Tools & Technology (Expanded)
+107.How does the AI-powered property matchmaker work?
+Users answer a short questionnaire about preferences, lifestyle, work commute, and budget. The AI then suggests the best-fit properties and neighborhoods based on their responses and behavior.
+108.What is Live Augmented Reality (AR) Property Walkthrough?
+Users can walk through properties using their phone’s camera, overlaying furniture and modifications in real-time. They can also visualize a future home on an empty plot.
+109.How does 100Gaj provide real-time crowd and noise level insights?
+We use IoT sensors, traffic data, and social media activity to show real-time crowd density and noise levels for any area, helping users assess the environment.
+110.What is the Property Investment ROI Simulator?
+Users enter investment details (price, expected rent, renovation costs), and the AI predicts future ROI, resale value, and passive income potential.
+111.What is the "Try Before You Buy" rental model?
+Potential buyers can rent a home for a short trial period (like a weekend or week) to experience living there before making a purchase decision.
+112.How does 100Gaj use blockchain for property transactions?
+We use smart contracts to enable secure, instant, and fraud-proof buying and selling of properties. Every transaction is recorded on a blockchain ledger for transparency.
+113.What is the AI-powered Predictive Crime & Safety Index?
+It uses crime data and AI to predict future safety of an area, giving users a "future crime prediction" score.
+114.What is Hyper-Local Social Integration?
+Buyers can chat with current residents via a community forum to ask about safety, schools, commute, and social life.
+115.What is the VR-Based Renovation Planner?
+Users can modify a house’s interior/exterior in VR to visualize different renovation styles. AI suggests cost estimates and connects them with contractors.
+116.What is "Dynamic Pricing" for houses?
+Property prices change based on demand, interest, and nearby trends, similar to flight and hotel pricing. Limited-time deals are offered based on real-time buyer activity.
+Equity Ownership & Micro Real Estate
+117.What is the Equity Ownership Plan at 100Gaj?
+The equity ownership plan allows multiple investors to own a stake in a property through fractional or co-ownership. This makes real estate investment more accessible and is managed transparently via smart contracts.
+118.What is Micro Real Estate?
+Micro real estate lets users invest in small, high-demand segments like single rooms, micro-apartments, or commercial kiosks. This lowers the investment barrier and diversifies portfolios.

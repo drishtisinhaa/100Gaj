@@ -1,0 +1,101 @@
+{
+    "company_info": {
+      "name": "100Gaj",
+      "headline": "Find your Perfect Home with 100Gaj.",
+      "slogan": "Your trusted partner in finding the perfect property that matches your dreams and aspirations.",
+      "description": "We are a team of dedicated professionals committed to providing exceptional service and expertise in luxury real estate. We offer a range of services to help you find your dream home, from personalized consultations to virtual tours.",
+      "contact": {
+        "email": "contact@100gaj.com",
+        "phone": "+91 9876 543 210",
+        "address": "Pune, Maharashtra, India"
+      },
+      "statistics": {
+        "experience_years": "15+",
+        "properties_sold": "200+",
+        "client_satisfaction_percentage": 98,
+        "awards_won": "20+",
+        "property_transactions_value": "₹500 Cr+",
+        "happy_clients": "200+"
+      }
+    },
+    "core_values": {
+      "mission": "To deliver exceptional real estate experiences by offering a curated selection of luxury properties and providing personalized, high-quality service to our clients.",
+      "vision": "To be the premier choice for luxury real estate, setting new standards in the industry through innovation, integrity, and an unwavering commitment to client satisfaction."
+    },
+    "leadership_team": [
+      {
+        "name": "Aryan Panda",
+        "title": "CEO",
+        "bio": "Aryan is a visionary leader driven by innovation and bold ambition. With fresh perspectives and unwavering dedication, he's shaping the future of 100Gaj from day one."
+      },
+      {
+        "name": "Bhoomi Singh",
+        "title": "Chief Operating Officer",
+        "bio": "As COO, Bhoomi brings energy and precision to operations, laying strong foundations for scalable growth. With a sharp focus on efficiency and execution, she is committed to turning strategy into lasting impact."
+      },
+      {
+        "name": "Shrishti Parihar",
+        "title": "HR Manager",
+        "bio": "Shrishti champions a people-first culture, building a supportive and inclusive environment. She is passionate about nurturing talent, fostering collaboration, and shaping a thriving workplace."
+      }
+    ],
+    "top_agents": [
+      {"name": "Rahul Sharma", "properties": 24, "rating": 4.9, "title": "Luxury Property Specialist"},
+      {"name": "Priya Patel", "properties": 18, "rating": 4.7, "title": "Commercial Real Estate"},
+      {"name": "Vikram Singh", "properties": 31, "rating": 4.8, "title": "Investment Advisor"},
+      {"name": "Neha Khanna", "properties": 27, "rating": 4.9, "title": "Residential Expert"},
+      {"name": "Daksh Gupta", "rating": 5.0, "properties": 0, "title": "Real Estate Agent", "experience": "10 years", "languages": ["English", "Hindi"], "bio": "Experienced real estate agent specializing in Residential and Commercial properties."}
+    ],
+    "premium_builders": [
+      {"name": "DLF Limited", "project_count": 48},
+      {"name": "Godrej Properties", "project_count": 36},
+      {"name": "Prestige Group", "project_count": 52},
+      {"name": "Sobha Limited", "project_count": 29},
+      {"name": "Lodha Group", "project_count": 41}
+    ],
+    "trending_localities": [
+      {"location": "Dwarka", "description": "A popular area with modern apartments and excellent connectivity to the city center and airport."},
+      {"location": "Golf Course Road", "description": "An upscale locality known for luxury high-rise apartments with world-class amenities and golf course views."},
+      {"location": "South Delhi", "description": "Delhi's most prestigious neighborhoods, featuring premium villas and bungalows."},
+      {"location": "Gurgaon", "description": "A major corporate hub with modern residential complexes and well-developed urban infrastructure."}
+    ],
+    "ai_tools": [
+      {"name": "Virtual Property Tour", "description": "Explore properties from anywhere with AI-powered 3D walkthroughs, providing a realistic feel of the space without requiring physical visits."},
+      {"name": "Delhi Area Analyzer", "description": "An AI tool to analyze the pros, cons, safety, and infrastructure of different areas in Delhi, helping you make informed decisions about where to live or invest."},
+      {"name": "Price Prediction", "description": "Uses machine learning algorithms to predict property value trends based on specifications like area, bedrooms, and location."},
+      {"name": "Smart Home Integration", "description": "We feature and consult on properties with integrated AI systems to control lighting, security, and climate for a modern living experience."},
+      {"name": "Chatbot Assistant", "description": "A 24/7 AI-powered assistant, like me, built to answer your property queries instantly and provide detailed information."},
+      {"name": "Neighborhood Analysis", "description": "Our AI algorithms analyze crucial data points for any neighborhood, including safety scores, quality of amenities, and investment potential."},
+      {"name": "Document Analysis", "description": "Provides automated legal document review services, using AI to extract key terms and flag potential issues for faster and safer transactions."}
+    ],
+    "how_it_works": {
+      "buying_process": [
+        {"step": 1, "title": "Search Properties", "description": "Browse through thousands of our verified properties using advanced search filters that match your criteria."},
+        {"step": 2, "title": "Schedule Visits", "description": "Book property visits, both physical and virtual, with just a few clicks and tour your favorite properties at your convenience."},
+        {"step": 3, "title": "Get Support", "description": "Our team of real estate experts will guide you through the entire process, from property viewing and negotiation to documentation."},
+        {"step": 4, "title": "Close the Deal", "description": "Finalize your property transaction with confidence, backed by our professional legal and administrative support."}
+      ],
+      "selling_process": [
+          {"step": 1, "title": "Create Your Profile", "description": "Sign up on our platform and complete your profile with your contact and verification details."},
+          {"step": 2, "title": "List Your Property", "description": "Provide detailed information about your property, including photos, amenities, location, and your asking price."},
+          {"step": 3, "title": "Get Verified", "description": "Our internal team reviews and verifies every new listing to ensure it meets our quality and accuracy standards."},
+          {"step": 4, "title": "Connect with Buyers", "description": "Once verified, your property is listed, and you will start receiving inquiries directly from our network of thousands of verified buyers."}
+      ]
+    },
+    "why_choose_us": [
+      {"feature": "Verified Listings", "description": "Every single property on our platform is physically verified by our team, ensuring that what you see is what you get. This guarantees accuracy and reliability."},
+      {"feature": "Price Alerts", "description": "Never miss an opportunity. You can set personalized price alerts for your preferred areas and get notified instantly about new listings or price changes."},
+      {"feature": "Expert Advice", "description": "Our team consists of seasoned real estate professionals. You can connect with them for unbiased guidance on buying, selling, or investing in properties."},
+      {"feature": "Legal Assistance", "description": "We offer end-to-end legal support. Our team helps with all documentation, performs legal checks on properties, and ensures your paperwork is flawless."}
+    ],
+    "premium_subscription": {
+        "title": "100Gaj Premium",
+        "description": "Unlock exclusive features and get the most out of 100Gaj with our premium subscription.",
+        "price": "Starting at ₹499/month",
+        "features": [
+            "Access to exclusive, off-market premium property listings.",
+            "Use powerful and advanced search filters to pinpoint your perfect property.",
+            "Receive 24/7 dedicated, priority customer support for all your queries."
+        ]
+    }
+  }

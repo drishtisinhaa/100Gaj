@@ -1,0 +1,285 @@
+SECTION: HOMEPAGE / GENERAL NAVIGATION
+
+Header Navigation: Buy, Rent, Tools, Home, Localities, Builders, Agents, AI Tools, Features, Process, News.
+Header Action: Post Property FREE.
+Headline: Find your Perfect Home with 100Gaj.
+Search Bar: "Search by location or area..."
+Search Options:
+- Buy Properties
+- Rent Properties
+- Flat
+- Apartment
+- Villa
+- Commercial
+- Near Me (button)
+- Search (button)
+- Search by Map View (link)
+
+
+Section: Choose from Our Collection
+- Description: Discover properties that match your style, from modern apartments to luxury villas.
+
+Section: Explore Our Services
+- Description: We offer a range of services to help you find your dream home. From personalized consultations to virtual tours, we are here to assist you every step of the way.
+
+Section: Meet Our Team
+- Description: Our team of experienced real estate professionals is dedicated to providing you with the best service. Get to know the people behind our success.
+
+---
+SECTION: POPULAR LOCATIONS
+Title: Trending Localities
+Description: Discover the most sought-after neighborhoods with excellent amenities, connectivity, and investment potential.
+- Location: Dwarka. Description: Modern apartments with excellent connectivity to the city center and airport.
+- Location: Golf Course Road. Description: Luxury high-rise apartments with world-class amenities and golf views.
+- Location: South Delhi. Description: Premium villas and bungalows in Delhi's most prestigious neighborhoods.
+- Location: Gurgaon. Description: Corporate hubs with modern residential complexes and urban infrastructure.
+
+---
+SECTION: TRUSTED DEVELOPERS
+Title: Premium Builders & Developers
+Description: Partner with India's most reputable builders known for their quality construction, timely delivery, and innovative design principles.
+Developers List (First Instance):
+- DLF Limited (logo): 48 Projects.
+- Godrej Properties (logo): 36 Projects.
+- Prestige Group (logo): 52 Projects.
+- Sobha Limited (logo): 29 Projects.
+- Lodha Group (logo): 41 Projects.
+Developers List (Second Instance, as provided):
+- DLF Limited (logo): 48 Projects.
+- Godrej Properties (logo): 36 Projects.
+- Prestige Group (logo): 52 Projects.
+- Sobha Limited (logo): 29 Projects.
+- Lodha Group (logo): 41 Projects.
+Action: View All Premium Builders.
+
+---
+SECTION: EXPERT PROFESSIONALS
+Title: Meet Our Top Agents
+Description: Our team of experienced real estate professionals is dedicated to helping you find your perfect property with personalized service and local expertise.
+Agent Profiles (from Homepage):
+- Agent: Rahul Sharma. Details: 24 Properties, 4.9 Rating. Title: Luxury Property Specialist.
+- Agent: Priya Patel. Details: 18 Properties, 4.7 Rating. Title: Commercial Real Estate.
+- Agent: Vikram Singh. Details: 31 Properties, 4.8 Rating. Title: Investment Advisor.
+- Agent: Neha Khanna. Details: 27 Properties, 4.9 Rating. Title: Residential Expert.
+Action: View All Agents.
+
+Agent Search Page Details:
+- Title: Find Your Perfect Agent. Description: Our elite team of real estate professionals combines local expertise with global connections to serve your property needs.
+- Search Bar: Search by agent name, role, or specialization...
+- Filters: All Agents, Commercial, Residential.
+- Agent Profile 1: Daksh Gupta. Rating: 5.0. Properties: 0. Title: Real Estate Agent. Experience: 10 years. Languages: English, Hindi. Bio: Experienced real estate agent specializing in Residential, Commercial. Action: View Profile.
+- Agent Profile 2: Daksh Gupta. Rating: 4.0. Properties: 0. Title: Real Estate Agent. Experience: 20 years. Languages: English, Hindi. Bio: Experienced real estate agent specializing in Residential, Commercial. Action: View Profile.
+- Company Stats: 200+ Happy Clients, 30+ Years Combined Experience, ₹500 Cr+ Property Transactions, 98% Client Satisfaction.
+- Actions: Browse Properties, Contact Us, Contact an Agent, Join Our Team.
+
+---
+SECTION: AI-POWERED REAL ESTATE TOOLS
+Title: Cutting-Edge Technology / Real Estate Enhanced by AI
+Description: Experience the future of real estate with our innovative AI-powered tools that make finding and purchasing property easier than ever. / Cutting-edge artificial intelligence transforming property search, analysis, and transactions.
+List of AI Tools:
+- Tool: Virtual Property Tour. Description: AI-powered 3D walkthroughs of properties without physical visits. Action: Learn more / Use tool.
+- Tool: Delhi Area Analyzer. Description: A Powerful AI tool to analyze the pros and cons of different areas in Delhi. Action: Learn more / Use tool.
+- Tool: Price Prediction. Description: Machine learning algorithms to predict property value trends. Action: Learn more / Use tool.
+- Tool: Smart Home Integration. Description: AI systems to control lighting, security and climate. Action: Learn more / Use tool.
+- Tool: Chatbot Assistant. Description: 24/7 AI-powered assistant to answer property queries. Action: Learn more / Use tool.
+- Tool: Neighborhood Analysis. Description: AI algorithms analyzing area safety, amenities and investment potential. Action: Learn more / Use tool.
+- Tool: Document Analysis. Description: Automated legal document review with key term extraction. Action: Learn more / Use tool.
+
+How AI Enhances Your Property Journey:
+- Benefit: Save Time and Effort. Description: Our AI tools automate repetitive tasks, allowing you to focus on making decisions rather than collecting information.
+- Benefit: Make Informed Decisions. Description: Get access to data-driven insights that help you understand property values, neighborhood trends, and investment potential.
+- Benefit: Personalized Experience. Description: Our AI learns your preferences and tailors recommendations to match your specific needs and lifestyle requirements.
+- Benefit: Improved Visualization. Description: Experience properties remotely with virtual tours and 3D models that give you a realistic feel of the space before visiting in person.
+AI Statistics:
+- 95% Accuracy in Price Predictions
+- 10x Faster Property Matching
+- 24/7 AI Assistant Availability
+- 1000+ Data Points Analyzed
+Actions: Explore All AI Features, Explore Properties, Contact Our Team, Get Started, Request Demo.
+
+---
+SECTION: WHY CHOOSE US
+- Feature: Verified Listings. Description: Every property is verified by our team to ensure accuracy and reliability.
+- Feature: Price Alerts. Description: Stay updated with price changes and new listings in your preferred areas.
+- Feature: Expert Advice. Description: Connect with real estate experts for guidance on buying, selling, or renting properties.
+- Feature: Legal Assistance. Description: Get help with documentation, legal checks, and paperwork from our professional team.
+
+---
+SECTION: SIMPLE PROCESS
+Title: How It Works
+Description: Finding your dream property has never been easier with our simple process.
+- Step 01: Search Properties. Description: Browse through thousands of verified properties matching your criteria.
+- Step 02: Schedule Visits. Description: Book property visits with just a few clicks and tour your favorite properties.
+- Step 03: Get Support. Description: Our experts will guide you through the entire process, from viewing to closing the deal.
+- Step 04: Close the Deal. Description: Finalize your property transaction with confidence and start your new chapter.
+Action: Explore Properties.
+
+---
+SECTION: PROPERTY NEWS & INSIGHTS
+Description: Stay updated with the latest trends, insights, and news from the real estate world.
+- Article 1: Your building’s digital infra will be rated. But who will pay? (Source: Livemint, Date: June 13, 2025). Summary: A conflict is brewing in India as telecom companies and real estate developers clash over costs associated with a new digital connectivity rating system for buildings. The Telecom Regulatory Authority is working on a framework aimed at improving indoor mobile and internet signals. Action: Read Article.
+- Article 2: Rs 1.2 Lakh Monthly Salary, Still Can’t Buy a Home In India? Viral Post Sparks Debate (Source: News18, Date: June 8, 2025). Summary: Akhilesh's viral post on X highlights India's real estate crisis, showing even high earners in Gurugram struggle to afford homes. Action: Read Article.
+- Article 3: Japanese developers bet big on Indian realty, lured by long-term growth promise (Source: Livemint, Date: June 8, 2025). Summary: Japanese real estate investors and developers entered India much after others but are patient, equity investors betting on land and early-stage projects. Action: Read Article.
+- Article 4: Gen…Next…Go! Meet India’s real estate scions (Source: Livemint, Date: May 18, 2025). Summary: Family-led real estate businesses Sattva, Prestige Estates, Brigade Enterprises, Omaxe and Embassy Group are gearing up to hand over the baton to the next generation. Action: Read Article.
+- Pagination: 1, 2, 3, Page 1 of 3.
+
+---
+SECTION: ABOUT US
+Title: Learn about our Company
+Description: We are a team of dedicated professionals who are committed to providing exceptional service and expertise in luxury real estate.
+Our Core Values: Mission and Vision
+- Our Mission: To deliver exceptional real estate experiences by offering a curated selection of luxury properties and providing personalized, high-quality service to our clients.
+- Our Vision: To be the premier choice for luxury real estate, setting new standards in the industry through innovation, integrity, and an unwavering commitment to client satisfaction.
+Meet The Team:
+- Name: Aryan Panda. Title: CEO. Bio: Meet our CEO, a visionary leader at the start of an exciting journey, driven by innovation and bold ambition. With fresh perspectives and unwavering dedication, he's shaping the future of our company from day one.
+- Name: Bhoomi Singh. Title: Chief Operating Officer. Bio: Our COO brings energy and precision to operations, laying strong foundations for scalable growth from the ground up. With a sharp focus on efficiency and execution, he's committed to turning strategy into lasting impact.
+- Name: Shrishti Parihar. Title: HR Manager. Bio: Our HR Manager champions a people-first culture, building a supportive and inclusive environment from the very start. She is passionate about nurturing talent, fostering collaboration, and shaping a thriving workplace.
+Company Achievements:
+- 15+ Years Experience
+- 200+ Properties Sold
+- 95% Client Satisfaction
+- 20+ Awards Won
+Call to Action: Ready to Find Your Dream Home? Whether you're looking to buy, sell, or invest, our team is here to guide you every step of the way. Let's build your dream together.
+Actions: Browse Properties, Contact Us, Get in Touch, View Properties.
+
+---
+SECTION: CONTACT US (from https://100gaj.vercel.app/contact)
+Title: Get in Touch with us
+Description: We are here to help you with your property needs.
+Contact Form Fields: Full Name (Enter your full name), Email Address (Enter your email address), Phone Number (Enter your phone number), Message (Enter your message). Action: Send Message.
+Location: Visit Us.
+Our Approach: Our Commitment to You. At 100gaj, we are dedicated to providing exceptional customer service. Our approach is centered around understanding your unique needs and delivering personalized solutions that exceed your expectations.
+Client Feedback:
+- Rahul Sharma, Homeowner: "The 100gaj team made the process of finding our dream home effortless. Their attention to detail and personalized service were exceptional."
+- Priya Patel, First-time Buyer: "As a first-time buyer, I was nervous, but 100gaj guided me through every step. I couldn't be happier with my new home."
+- Vikram Malhotra, Property Seller: "Selling my property was quick and hassle-free thanks to 100gaj. Their professionalism and market knowledge are unmatched."
+Frequently Asked Questions (Contact Page):
+- Q: How do I start the process of buying a property? A: You can start by browsing our curated listings and contacting our team for personalized assistance. We'll guide you through the entire process.
+- Q: What kind of properties do you offer? A: We specialize in luxury properties, including modern apartments, villas, and exclusive estates tailored to discerning tastes.
+- Q: How can I schedule a property viewing? A: You can schedule a viewing by filling out our contact form or calling our office. Our team will arrange a convenient time for you to visit the property.
+- Q: What services do you offer for sellers? A: We provide comprehensive services for sellers, including property valuation, marketing, and guidance throughout the selling process.
+
+---
+SECTION: POST PROPERTY
+Title: Post Property for FREE
+Description: List your property and reach thousands of verified buyers and tenants. No hidden charges, no complications.
+Statistics: Property Sold Every 30 Minutes, Active Buyers 10K+ Daily.
+Why Choose 100Gaj for Selling:
+- Zero Commission: No hidden fees or commissions on your property sale.
+- Verified Buyers: Connect with serious, verified buyers only.
+- Expert Support: Get assistance from our real estate experts anytime.
+How it Works (Selling):
+- Step 1: Create Your Profile. Sign up and complete your profile with your contact information. Action: Learn More.
+- Step 2: List Your Property. Add property details, photos, amenities, and set your price. Action: Learn More.
+- Step 3: Get Verified. Our team reviews and verifies your listing for quality assurance. Action: Learn More.
+- Step 4: Connect with Buyers. Receive inquiries and connect directly with interested buyers. Action: Learn More.
+Call to Action: Ready to List Your Property? Join thousands of successful property sellers on 100Gaj. Start your journey today!
+Actions: List Your Property Now, Post Now!
+
+---
+SECTION: UPGRADE TO PREMIUM
+Title: Unlock exclusive features and get the most out of 100Gaj
+- Feature: Exclusive Listings. Description: Access to premium properties not available to regular users.
+- Feature: Advanced Filters. Description: Use powerful search filters to find your perfect property.
+- Feature: Priority Support. Description: 24/7 dedicated customer support for all your queries.
+- Price: Starting at ₹499/month.
+- Actions: Upgrade Now, Maybe later.
+
+---
+SECTION: DASHBOARD
+Title: Welcome to your personalized real estate dashboard.
+Subtitle: Manage Your Real Estate Portfolio.
+Tabs: Profile Details, My Properties.
+Properties Section: Your Properties. Add Property. Message: "No properties found. You haven't listed any properties yet."
+Action: List your first property.
+
+---
+SECTION: TOOL - DELHI AREA ANALYZER
+Title: Delhi Area Analyzer
+Description: Make informed decisions about where to live or invest in Delhi. Get detailed safety analysis, pros & cons, and neighborhood insights.
+Input: Enter a Delhi area (e.g. Dwarka, Rohini, Vasant Kunj). Action: Analyze Area.
+Popular areas to explore: Dwarka, Rohini, Vasant Kunj, South Extension, Pitampura, Lajpat Nagar, Mayur Vihar, Janakpuri, Saket, Karol Bagh.
+How it Works:
+- Safety Analysis: We analyze crime statistics, police reports, and resident feedback to generate a safety score for each area.
+- Infrastructure Assessment: Evaluation of essential services like electricity, water supply, roads, and public transportation.
+- Community Insights: Detailed pros and cons based on resident experiences, local surveys, and expert opinions.
+Call to Action: Ready to Find Your Perfect Delhi Neighborhood? Use our Delhi Area Analyzer to make informed decisions about where to live, invest, or start a business in Delhi NCR.
+Action: Search for Homes.
+
+---
+SECTION: TOOL - HOUSE PRICE PREDICTOR
+Title: House Price Predictor
+Description: Discover the market value of your dream property in seconds.
+Property Details: Enter property specifications to receive an AI-driven price estimate.
+- Input: Area (sq ft). Prompt: Enter area in square feet.
+- Input: Bedrooms. Prompt: Number of bedrooms.
+- Input: Location. Prompt: Search for a location...
+- Input: City. Example: Bangalore.
+- Property Features: Resale Property (Yes), Swimming Pool (No), Car Parking (Yes), School Nearby (Yes), Lift Available (Yes), Maintenance (Yes).
+Action: Predict Property Price.
+
+---
+SECTION: TOOL - LOAN EMI CALCULATOR
+Title: Loan EMI Calculator
+Description: Plan your home loan with our interactive EMI calculator. Adjust loan amount, interest rate, and tenure to find the perfect plan for your budget.
+Calculator Inputs:
+- Loan Amount: Example ₹30,00,000 (Range ₹1L - ₹1Cr).
+- Interest Rate: Example 8.5% (Range 5% - 20%).
+- Loan Tenure (Years): Example 20 years (Range 1 yr - 30 yrs).
+Loan Summary Example:
+- Monthly EMI: ₹26,035
+- Principal Amount: ₹30,00,000
+- Total Interest: ₹32,48,327
+- Total Amount: ₹62,48,327
+- Breakdown: Principal (48.0%), Interest (52.0%).
+Disclaimer: This calculator provides estimates only and should not be considered financial advice.
+Frequently Asked Questions (EMI):
+- What is EMI? A fixed payment amount made by a borrower to a lender each month.
+- How is EMI calculated? Formula: EMI = [P x R x (1+R)^N]/[(1+R)^N-1].
+- How can I reduce my EMI? Increase tenure, make a larger down payment, negotiate a lower interest rate, or opt for a balance transfer.
+- What factors affect home loan eligibility? Age, income, employment stability, credit score, existing financial obligations, property's value and location.
+- Can I pay more than my EMI amount? Yes, most lenders allow prepayment, though penalties may apply.
+Call to Action: Ready to Find Your Dream Home? Our property experts are ready to help you find the perfect property within your budget.
+Actions: Contact an Expert, Browse Properties.
+
+---
+SECTION: TOOL - PROPERTY COMPARISON
+Title: Compare Properties Side by Side
+Description: Compare features, amenities, and prices of your favorite properties to make an informed decision.
+Your Favorites Section:
+- How to Compare: Add properties to favorites by clicking the heart icon, select two from dropdowns, click the compare button.
+- Status Message: "Your favorite properties are available for comparison." or "Not enough properties to compare."
+- Guide: Find Properties (add favorites), Compare Details (select to compare), Make Your Decision (choose the best fit).
+- Prompt: "Your favorite properties will appear here for easy comparison once you've added them."
+Call to Action: Not sure which property is right for you?
+Actions: Schedule a viewing, Contact Agent, Start Browsing Properties.
+
+---
+SECTION: FOOTER & GENERAL INFORMATION
+Company Logo: 100 Gaj Logo
+Company Name: 100 GAJ
+Slogan: Your trusted partner in finding the perfect property that matches your dreams and aspirations. We specialize in luxury real estate for those who demand excellence.
+Footer Links - Properties:
+- Properties in Dwarka
+- Properties in Saket
+- Properties in Lutyens' Delhi
+- Properties in Defence Colony
+- Properties in Vasant Kunj
+- Properties in Hauz Khas
+- Properties in Greater Kailash
+- Properties in Model Town
+- Properties in Pandav Nagar
+Footer Links - Company:
+- About Us
+- Our Agents
+- Our builders
+Footer Links - Support:
+- Contact Us
+- FAQ
+- Privacy Policy
+- Terms of Service
+Footer Contact Information:
+- Location: Pune Maharashtra, India
+- Email: contact@100gaj.com
+- Phone: +91 9876 543 210
+Copyright: © 2025 100 Gaj. All rights reserved.
