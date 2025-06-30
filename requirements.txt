@@ -1,9 +1,0 @@
-Flask
-flask-cors
-gunicorn
-pandas
-numpy
-cloudpickle
-scikit-learn==1.6.1
-joblib
-requests
