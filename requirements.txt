@@ -1,0 +1,12 @@
+traceback
+datetime
+Flask
+flask-cors
+gunicorn
+pandas
+numpy
+scikit-learn==1.6.1
+cloudpickle
+joblib
+requests
+
