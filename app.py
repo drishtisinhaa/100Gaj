@@ -49,10 +49,7 @@ def validate_input(data, required_fields, field_types=None):
     
     return errors
 
-# Web Routes
-@app.route('/')
-def home():
-    return render_template('index.html')
+
 
 @app.route('/calculate/<calc_type>', methods=['POST'])
 def calculate(calc_type):
